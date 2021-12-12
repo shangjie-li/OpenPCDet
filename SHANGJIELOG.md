@@ -1,7 +1,7 @@
 ## Installation
  - Clone this repository
    ```
-   git clone -b v0.5.0 git@github.com:shangjie-li/OpenPCDet.git
+   git clone git@github.com:shangjie-li/OpenPCDet.git
    ```
  - Install PyTorch environment with Anaconda (Tested on Ubuntu 16.04 & CUDA 10.2)
    ```
