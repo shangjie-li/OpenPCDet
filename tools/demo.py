@@ -296,9 +296,20 @@ def main():
             1
             """
             
-            time_start = time.time()
             load_data_to_gpu(data_dict)
-            pred_dicts, _ = model.forward(data_dict)
+            pred_dicts, _ = model.forward(data_dict) # 0
+            
+            time_start = time.time()
+            pred_dicts, _ = model.forward(data_dict) # 1
+            pred_dicts, _ = model.forward(data_dict) # 2
+            pred_dicts, _ = model.forward(data_dict) # 3
+            pred_dicts, _ = model.forward(data_dict) # 4
+            pred_dicts, _ = model.forward(data_dict) # 5
+            pred_dicts, _ = model.forward(data_dict) # 6
+            pred_dicts, _ = model.forward(data_dict) # 7
+            pred_dicts, _ = model.forward(data_dict) # 8
+            pred_dicts, _ = model.forward(data_dict) # 9
+            pred_dicts, _ = model.forward(data_dict) # 10
             time_end = time.time()
             
             print()
@@ -366,7 +377,7 @@ def main():
             if not OPEN3D_FLAG:
                 mlab.show(stop=True)
                 
-            print('Time cost per batch: %s' % (round(time_end - time_start, 3)))
+            print('Time cost per batch: %s' % (round((time_end - time_start) / 10, 3)))
 
     logger.info('Demo done.')
 
